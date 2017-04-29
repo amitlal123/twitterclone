@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+		<link rel="stylesheet" href="css/styles.css" type="text/css" />
+	</head>
+	<body>
+		<div id="page-container">
+			<div id="dashboard">
+				<div id="profile-summary">
+					<div class="content">
+						<img class='avatar' src='img/alagoon.jpg' data-toggle="tooltip" data-placement="right" title="Hello!"/>
+						<p>Your Name Here</p>
+					</div>
+				</div>
+				<div id="tweet-content">
+
+					<time class="timeago" datetime="2016-09-17T18:06:17Z">September 17, 2016</time>
+
+					<!-- When the user clicks on the textarea, the textarea will double in size and the character count and Tweet buttons will be revealed. -->
+					<!-- jQuery ".on" eventHandler -->
+					<textarea class="tweet-compose" placeholder="Compose new Tweet..."/></textarea>
+
+					<!-- Initially, the Tweet button and the character count button below will be hidden. -->
+					<!-- CSS -->
+					<div id="tweet-controls">
+
+						<!-- As the user types the character count will decrease. Once it hits 10 character or less the count will turn red -->
+						<!-- jQuery keypress events (keypress, keydown, keyup, etc) -->
+						<div id="char-count">140</div>
+
+						<!-- If the user puts in more than 140 characters, the tweet button will be disabled (and re-enabled when there are <= 140 chars) -->
+						<!-- javascript length method -->
+						<button class="button" id="tweet-submit">Tweet</button>
+					</div>
+				</div>
+			</div>
+			<div id="main">
+				<h2>Tweets</h2>
+				<div id="stream">
+
+					<!-- When the user successfully inputs characters and clicks the “Tweet” button, a new tweet will be created and added to the tweet stream in the main column, using the user’s fake profile image in the top left and username/fullname. -->
+					<!-- jQuery ".prepend" method -->
+					<div class="tweet">
+						<div class="content">
+							<img class="avatar" src="img/damenleeturks.jpg" data-toggle="tooltip" data-placement="right" title="Hello!"/>
+							<strong class="fullname">My BFF</strong>
+							<span class="username">@mybff</span>
+
+							<p class="tweet-text">Today is an amazing day.</p>
+
+							<!-- The tweet actions below will only show up when you hover over the tweet. Otherwise, they will be hidden. -->
+							<!-- CSS ":hover" pseudo element -->
+							<div class="tweet-actions">
+								<ul>
+									<li><span class="icon action-reply"></span> Reply</li>
+									<li><span class="icon action-retweet"></span> Retweet</li>
+									<li><span class="icon action-favorite"></span> Favorite</li>
+									<li><span class="icon action-more"></span> More</li>
+								</ul>
+							</div>
+
+							<!-- The Retweets/timestamp/Reply areas below will also be hidden by default. These will only expand if you click on the tweet. jQuery animation to accomplish the reveal, similar to how it’s done on Twitter.com -->
+							<!-- jQuery ".on" eventHandler -->
+							<div class="stats">
+								<div class="retweets">
+									<p class="num-retweets">30</p>
+									<p>RETWEETS</p>
+								</div>
+								<div class="favorites">
+									<p class="num-favorites">6</p>
+									<p>FAVORITES</p>
+								</div>
+								<div class="users-interact">
+									<div>
+
+										<!-- Bootstrap tooltips for when hovering over a user’s avatar image -->
+										<img src="img/alagoon.jpg" />
+										<img src="img/vklimenko.jpg" />
+									</div>
+								</div>
+
+								<!-- Use timeago for time display -->
+								<div class="time">
+									<time class="timeago" datetime="2013 09 19T13:04:00Z">
+										1:04 PM - 19 Sep 13
+									</time>
+								</div>
+							</div>
+							<div class="reply">
+								<img class="avatar" src="img/alagoon.jpg" data-toggle="tooltip" title="Hello!"/>
+								<textarea class="tweet-compose" placeholder="Reply to @mybff"/></textarea>
+							</div>
+						</div>
+					</div><!-- .tweet -->
+
+					<div class="tweet">
+						<div class="content">
+							<img class="avatar" src="img/funwatercat.jpg" data-toggle="tooltip" data-placement="right" title="Hello!" />
+							<strong class="fullname">The Onion</strong>
+							<span class="username">@theonion</span>
+							<p class="tweet-text">“I'm able to speak confidently about a wide range of subjects, so it’s probably hard for most women to follow.” http://onion.com/1aWfKwf </p>
+							<div class="tweet-actions">
+								<ul>
+									<li><span class="icon action-reply"></span> Reply</li>
+									<li><span class="icon action-retweet"></span> Retweet</li>
+									<li><span class="icon action-favorite"></span> Favorite</li>
+									<li><span class="icon action-more"></span> More</li>
+								</ul>
+							</div>
+							<div class="stats">
+								<div class="retweets">
+									<p class="num-retweets">30</p>
+									<p>RETWEETS</p>
+								</div>
+								<div class="favorites">
+									<p class="num-favorites">6</p>
+									<p>FAVORITES</p>
+								</div>
+								<div class="users-interact">
+									<div>
+										<img src="img/jennyshen.jpg" />
+										<img src="img/damenleeturks.jpg" />
+									</div>
+								</div>
+								<div class="time">
+									<time class="timeago" datetime="2013 09 19T13:04:00Z">
+										1:04 PM - 19 Sep 13
+									</time>
+								</div>
+							</div>
+							<div class="reply">
+								<img class="avatar" src="img/alagoon.jpg" data-toggle="tooltip" data-placement="right" title="Hello!" />
+								<textarea class="tweet-compose" placeholder="Reply to @mybff"/></textarea>
+							</div>
+						</div>
+					</div><!-- .tweet -->
+
+					<div class="tweet">
+						<div class="content">
+							<img class="avatar" src="img/jennyshen.jpg" data-toggle="tooltip" data-placement = "right" title="Hello!" />
+							<strong class="fullname">Harvard Biz Review</strong>
+							<span class="username">@HarvardBiz</span>
+							<p class="tweet-text">It is possible to work with a loved one without ruining the relationship http://s.hbr.org/15FDIri </p>
+							<div class="tweet-actions">
+								<ul>
+									<li><span class="icon action-reply"></span> Reply</li>
+									<li><span class="icon action-retweet"></span> Retweet</li>
+									<li><span class="icon action-favorite"></span> Favorite</li>
+									<li><span class="icon action-more"></span> More</li>
+								</ul>
+							</div>
+							<div class="stats">
+								<div class="retweets">
+									<p class="num-retweets">30</p>
+									<p>RETWEETS</p>
+								</div>
+								<div class="favorites">
+									<p class="num-favorites">6</p>
+									<p>FAVORITES</p>
+								</div>
+								<div class="users-interact">
+									<div>
+										<img src="img/vklimenko.jpg" />
+										<img src="img/funwatercat.jpg" />
+									</div>
+								</div>
+								<div class="time">
+									<time class="timeago" datetime="2013 09 19T13:04:00Z">
+										1:04 PM - 19 Sep 13
+									</time>
+								</div>
+							</div>
+							<div class="reply">
+								<img class="avatar" src="img/alagoon.jpg"/>
+								<textarea class="tweet-compose" placeholder="Reply to @mybff"/></textarea>
+							</div>
+						</div>
+					</div><!-- .tweet -->
+				</div><!-- #stream -->
+			</div><!-- #main -->
+		</div><!-- #page-container -->
+		<script src="./js/jquery-2.0.3.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/umd/tooltip.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timeago/1.5.3/jquery.timeago.min.js"></script>
+		<script src="./js/animations.js"></script>
+	</body>
+</html>
+
+
+<time class="timeago" datetime="${dateStamp}">
+	${dateAgo}
+</time>
