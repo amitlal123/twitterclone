@@ -105,6 +105,7 @@ $(document).ready(function(){
     $(this).on('keyup',tweetCompose);
   });
 
+// Tweet submit event
   $('#tweet-submit').on('click',function(){
     var tweetHTML = prepareTweet();
     $('#stream').prepend(tweetHTML);
